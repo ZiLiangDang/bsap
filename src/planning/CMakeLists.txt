@@ -18,6 +18,8 @@ endif()
 #然后让c_cpp_properties.json读取这个文件，防止预编译找不到cmake中定义的宏而报错
 #c_cpp_properties.json中加上“complileCommands”："${workspacceFolder}/build/compile_commands.json"
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+#设置包名
+set(PLANNING_PACKAGE_NAME ${PROJECT_NAME})
 
 #find dependencies
 find_package(ament_cmake REQUIRED)
