@@ -5,7 +5,7 @@
 
 namespace Planning
 {
-    class PlanningProcess : public rclcpp::Node
+    class PlanningProcess : public rclcpp::Node//规划总流程
     {
     public:
         PlanningProcess();
