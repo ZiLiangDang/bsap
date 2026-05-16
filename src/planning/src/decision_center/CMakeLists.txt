@@ -10,9 +10,9 @@ set(DEPENDS
 add_library(decision_center SHARED
   ${CMAKE_CURRENT_SOURCE_DIR}/decision_center.cpp
 )
-set{target
+set(target
   decision_center
-}
+)
 #添加依赖
 ament_target_dependencies(decision_center
   ${DEPENDS}
