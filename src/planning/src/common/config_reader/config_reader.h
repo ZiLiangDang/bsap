@@ -4,6 +4,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include <yaml-cpp/yaml.h>
 #include <ament_index_cpp/get_package_share_directory.hpp>
+#include <unordered_map>
 
 namespace Planning
 {
