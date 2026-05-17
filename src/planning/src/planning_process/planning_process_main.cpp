@@ -3,12 +3,12 @@
 int main(int argc, char *argv[])
 {
     rclcpp::init(argc, argv);
-    RCLCPP_INFO(rclcpp::get_logger("planning_node"), "Planning start");
+    RCLCPP_INFO(rclcpp::get_logger("planning_process_main"), "Planning start");
     
     auto node = std::make_shared<Planning::PlanningProcess>();
     if (!node->process())
     {
-        RCLCPP_ERROR(rclcpp::get_logger("planning_node"), "Planning failed");
+        RCLCPP_ERROR(rclcpp::get_logger("planning_process_main"), "Planning failed");
         rclcpp::shutdown();
         return 1;
     }

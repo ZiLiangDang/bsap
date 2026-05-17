@@ -1,0 +1,16 @@
+digraph G {
+"base_footprint" -> "base_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"map" -> "base_footprint"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "camera"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "radar"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"left_front_steering_knuckle" -> "left_front"[label=" Broadcaster: default_authority\nAverage rate: 4.444\nBuffer length: 9.901\nMost recent transform: 1779011537.731079\nOldest transform: 1779011527.830361\n"];
+"base_link" -> "left_front_steering_knuckle"[label=" Broadcaster: default_authority\nAverage rate: 4.444\nBuffer length: 9.901\nMost recent transform: 1779011537.731079\nOldest transform: 1779011527.830361\n"];
+"base_link" -> "left_rear"[label=" Broadcaster: default_authority\nAverage rate: 4.444\nBuffer length: 9.901\nMost recent transform: 1779011537.731079\nOldest transform: 1779011527.830361\n"];
+"right_front_steering_knuckle" -> "right_front"[label=" Broadcaster: default_authority\nAverage rate: 4.444\nBuffer length: 9.901\nMost recent transform: 1779011537.731079\nOldest transform: 1779011527.830361\n"];
+"base_link" -> "right_front_steering_knuckle"[label=" Broadcaster: default_authority\nAverage rate: 4.444\nBuffer length: 9.901\nMost recent transform: 1779011537.731079\nOldest transform: 1779011527.830361\n"];
+"base_link" -> "right_rear"[label=" Broadcaster: default_authority\nAverage rate: 4.444\nBuffer length: 9.901\nMost recent transform: 1779011537.731079\nOldest transform: 1779011527.830361\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1779011537.741051"[ shape=plaintext ] ;
+}->"map";
+}
