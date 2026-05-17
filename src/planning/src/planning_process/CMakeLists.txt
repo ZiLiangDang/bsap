@@ -11,13 +11,13 @@ set(DEPENDS
 )
 
 # 添加节点
-add_executable(planning_process
+add_executable(planning_node
   ${CMAKE_CURRENT_SOURCE_DIR}/planning_process.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/planning_node.cpp
 )
 
 set(target 
-  planning_process
+  planning_node
 )
 
 # 添加依赖
