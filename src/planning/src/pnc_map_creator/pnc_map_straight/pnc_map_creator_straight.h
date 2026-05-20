@@ -9,6 +9,7 @@ namespace Planning
     {
     public:
         PNCMapCreatorStraight();
+        PNCMap create_pnc_map() override; // 创建地图接口
 
     private:
     };

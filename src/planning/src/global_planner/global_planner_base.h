@@ -2,6 +2,9 @@
 #define GLOBAL_PLANNER_BASE_H_
 
 #include "rclcpp/rclcpp.hpp"
+#include "base_msgs/msg/pnc_map.hpp"
+#include "geometry_msgs/msg/pose_stamped.hpp"
+#include "nav_msgs/msg/path.hpp"
 #include "config_reader.h"
 
 namespace Planning
