@@ -9,6 +9,7 @@ class GlobalPlannerNormal : public GlobalPlannerBase //普通全局路径规划�
 {
     public:
         GlobalPlannerNormal();
+        Path search_global_path(const PNCMap &pnc_map) override;//搜索全局路径
     };
 }  // namespace /* namespace_name */
 #endif  // GLOBAL_PLANNER_NOMAL_H_

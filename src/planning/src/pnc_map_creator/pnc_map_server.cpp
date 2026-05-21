@@ -10,7 +10,7 @@ namespace Planning
         map_rviz_pub_ = this->create_publisher<MarkerArray>("pnc_map_markerarray", 10);
         // 地图服务器
         map_server_ = this->create_service<PNCMapService>(
-            "pnc_map_service",
+            "pnc_map_server",
             std::bind(&PNCMapServer::response_pnc_map_callback, this, _1, _2)
         );
     }
@@ -28,7 +28,8 @@ namespace Planning
             map_creator_ = std::make_shared<PNCMapCreatorSTurn>();
             break;
         default:
-            break;
+            RCLCPP_WARN(this->get_logger(), "Invalid map type!");
+            return;
         }
         //创建并响应地图
         const auto pnc_map = map_creator_->create_pnc_map();

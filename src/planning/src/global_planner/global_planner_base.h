@@ -9,9 +9,24 @@
 
 namespace Planning
 {
+    using base_msgs::msg::PNCMap;
+    using geometry_msgs::msg::PoseStamped;
+    using nav_msgs::msg::Path;
+    enum class GlobalPlannerType
+    {
+        NORMAL
+    };
     class GlobalPlannerBase // 全局路径规划器基类
     {
     public:
+        virtual Path search_global_path(const PNCMap &pnc_map) = 0;//搜索全局路径
+        inline Path global_path() const { return global_path_; }//获取全局路径
+        virtual ~GlobalPlannerBase(){}
+
+    protected:
+        std::unique_ptr<ConfigReader> global_planner_congif_;
+        int global_planner_type_=0;
+        Path global_path_;
     };
 } // namespace Planning
 #endif // GLOBAL_PLANNER_BASE_H_

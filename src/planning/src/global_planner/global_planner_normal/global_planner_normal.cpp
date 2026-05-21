@@ -7,4 +7,8 @@ namespace Planning
         RCLCPP_INFO(rclcpp::get_logger("global_path"),"global_planner_normal created");
     
     }
-}//namespace Planning
+    Path GlobalPlannerNormal::search_global_path(const PNCMap &pnc_map)
+    {
+        return global_path_;
+    }
+} // namespace Planning
