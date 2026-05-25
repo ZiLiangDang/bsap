@@ -15,7 +15,7 @@ namespace Planning
     }
     // 全局路径回调
     void GlobalPathServer::response_global_path_callback(const std::shared_ptr<GlobalPathService::Request> request,
-                                                        const std::shared_ptr<GlobalPathService::Response> response)
+                                                         const std::shared_ptr<GlobalPathService::Response> response)
     {
         // 接受请求，多态
         switch (request->global_planner_type)
@@ -52,6 +52,26 @@ namespace Planning
     Marker GlobalPathServer::path2marker(const Path &path)
     {
         Marker path_rviz_;
+        path_rviz_.header = path.header;
+        path_rviz_.ns = "global_path";
+        path_rviz_.id = 0;
+        path_rviz_.action = Marker::ADD;
+        path_rviz_.type = Marker::LINE_STRIP;          // 连续的线段
+        path_rviz_.scale.x = 0.05;                     // 线段宽度
+        path_rviz_.color.a = 1.0;                      // 不透明度
+        path_rviz_.color.r = 0.8;                      // 红色
+        path_rviz_.color.g = 0.0;                      // 绿色
+        path_rviz_.color.b = 0.0;                      // 黄色
+        path_rviz_.lifetime = rclcpp::Duration::max(); // 无限时间
+        path_rviz_.frame_locked = true;                // 锁定坐标系
+
+        Point p_tmp;
+        for (const auto &pose : path.poses)
+        {
+            p_tmp.x = pose.pose.position.x;
+            p_tmp.y = pose.pose.position.y;
+            path_rviz_.points.emplace_back(p_tmp);
+        }
         return path_rviz_;
     }
 

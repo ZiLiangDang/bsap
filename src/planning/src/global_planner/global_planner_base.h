@@ -19,13 +19,13 @@ namespace Planning
     class GlobalPlannerBase // 全局路径规划器基类
     {
     public:
-        virtual Path search_global_path(const PNCMap &pnc_map) = 0;//搜索全局路径
-        inline Path global_path() const { return global_path_; }//获取全局路径
-        virtual ~GlobalPlannerBase(){}
+        virtual Path search_global_path(const PNCMap &pnc_map) = 0; // 搜索全局路径
+        inline Path global_path() const { return global_path_; }    // 获取全局路径
+        virtual ~GlobalPlannerBase() {}
 
     protected:
-        std::unique_ptr<ConfigReader> global_planner_congif_;
-        int global_planner_type_=0;
+        std::unique_ptr<ConfigReader> global_planner_congif_; // 配置
+        int global_planner_type_ = 0;                         // 类型
         Path global_path_;
     };
 } // namespace Planning

@@ -85,7 +85,7 @@ namespace Planning
             pnc_map_.right_boundary.points.emplace_back(pr_);
 
             len_temp+=len_step_*ratio;
-            p_mid_.x += len_step_*plus_flag;
+            p_mid_.x += len_step_*plus_flag*ratio;
         }
     }
 } // namespace Planning
