@@ -6,8 +6,8 @@ namespace Planning
     {
         RCLCPP_INFO(rclcpp::get_logger("global_path"),"global_planner_normal created");
         
-        global_planner_congif_= std::make_unique<ConfigReader>();
-        global_planner_congif_->read_global_path_config();
+        global_planner_config_= std::make_unique<ConfigReader>();
+        global_planner_config_->read_global_path_config();
         global_planner_type_ = static_cast<int>(GlobalPlannerType::NORMAL);
     }
     Path GlobalPlannerNormal::search_global_path(const PNCMap &pnc_map)

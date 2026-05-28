@@ -24,7 +24,7 @@ namespace Planning
         virtual ~GlobalPlannerBase() {}
 
     protected:
-        std::unique_ptr<ConfigReader> global_planner_congif_; // 配置
+        std::unique_ptr<ConfigReader> global_planner_config_; // 配置
         int global_planner_type_ = 0;                         // 类型
         Path global_path_;
     };

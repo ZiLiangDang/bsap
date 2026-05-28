@@ -55,7 +55,7 @@ namespace Planning
         pnc_map_.midline.lifetime = rclcpp::Duration::max(); //
         pnc_map_.midline.frame_locked = true; //与坐标系绑定
         //左边界格式
-        pnc_map_.left_boundary=pnc_map_.midline;;
+        pnc_map_.left_boundary=pnc_map_.midline;
         pnc_map_.left_boundary.id=1;
         pnc_map_.left_boundary.type = Marker::LINE_STRIP;//连续线条
         pnc_map_.left_boundary.color.r = 1.7;//红色分量
