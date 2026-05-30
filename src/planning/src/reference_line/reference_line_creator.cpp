@@ -47,10 +47,11 @@ namespace Planning
             refer_line_.refer_line.emplace_back(point_tmp);
         }
         // 平滑整条参考线
-
+        refer_line_smoother_->smooth_reference_line(refer_line_);
+        
         // 计算投影点参数
         Curve::cal_projection_param(refer_line_);
-        RCLCPP_INFO(rclcpp::get_logger("refer_line"), "reference line created,match_point_index = %d,back_index=%d,size=%ld ",
+        RCLCPP_INFO(rclcpp::get_logger("refer_line"), "reference line created,match_point_index = %d,front_index=%d,back_index=%d,size=%ld ",
                     match_point_index_, front_index_, back_index_, refer_line_.refer_line.size());
 
         return refer_line_;

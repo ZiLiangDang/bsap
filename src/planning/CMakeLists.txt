@@ -45,6 +45,7 @@ include_directories(
   src/vehicle_info/obs_car
   src/planning_process
   src/move_cmd
+  src/test/osqp_test
 )
 
 #查找依赖
@@ -71,6 +72,7 @@ add_subdirectory(src/planning_process)
 add_subdirectory(src/pnc_map_creator)
 add_subdirectory(src/reference_line)
 add_subdirectory(src/vehicle_info)
+add_subdirectory(src/test)
 
 #安装辅助目录
 install(DIRECTORY 
