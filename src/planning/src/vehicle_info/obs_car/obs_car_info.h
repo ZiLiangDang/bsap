@@ -8,7 +8,7 @@ namespace Planning
     class ObsCar : public VehicleBase // 障碍车
     {
     public:
-        ObsCar();
+        ObsCar(const int &id);
     };
 } // namespace Planning
 #endif // OBS_CAR_BASE_H_

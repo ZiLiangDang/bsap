@@ -58,6 +58,8 @@ namespace Planning
     private:
         std::unique_ptr<ConfigReader> process_config_;               // 配置
         std::shared_ptr<VehicleBase> car_;                           // 主车
+        std::vector<std::shared_ptr<VehicleBase>> obses_spawn_;      // 所有障碍物，模拟感知信号
+        std::vector<std::shared_ptr<VehicleBase>> obses_;            // 要考虑的障碍物
         double obs_dis_ = 0.0;                                       // 考虑障碍物距离
         std::shared_ptr<StaticTransformBroadcaster> tf_broadcaster_; // 坐标广播器
         std::unique_ptr<Buffer> buffer_;                             // 缓存对象
