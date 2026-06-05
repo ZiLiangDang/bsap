@@ -21,9 +21,10 @@ namespace Planning
     class VehicleBase // 车辆基类
     {
     public:
-        //更新参数
-        inline void update_location(const PoseStamped &loc){loc_point_=loc;}
-        //坐标转化 定位点转frenet
+        // 更新参数
+        inline void update_location(const PoseStamped &loc) { loc_point_ = loc; }
+        // 坐标转化 定位点转frenet
+        virtual void vehicle_cartesian_to_frenet(const Referline &refer_line) = 0;
         // 基本属性
         inline std::string child_frame() const { return child_frame_; }
         inline double length() const { return length_; }
@@ -40,6 +41,14 @@ namespace Planning
         inline double dacceleration() const { return dacceleration_; }
 
         // 向参考线投影的frenet参数
+        inline double s() const { return s_; }
+        inline double l() const { return l_; }
+        inline double ds_dt() const { return ds_dt_; }
+        inline double dl_ds() const { return dl_ds_; }
+        inline double dl_dt() const { return dl_dt_; }
+        inline double dds_dt() const { return dds_dt_; }
+        inline double ddl_ds() const { return ddl_ds_; }
+        inline double ddl_dt() const { return ddl_dt_; }
         // 向路径投影的frenet参数
         // 时间参数
         // 虚析构
@@ -62,6 +71,14 @@ namespace Planning
         double dacceleration_ = 0.0; // 加加速度
 
         // 向参考线投影的frenet参数
+        double s_ = 0.0;
+        double l_ = 0.0;
+        double ds_dt_ = 0.0;
+        double dl_ds_ = 0.0;
+        double dl_dt_ = 0.0;
+        double dds_dt_ = 0.0;
+        double ddl_ds_ = 0.0;
+        double ddl_dt_ = 0.0;
 
         // 向路径投影的frenet参数
 
