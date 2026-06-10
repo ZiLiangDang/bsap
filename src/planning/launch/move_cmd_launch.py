@@ -17,3 +17,4 @@ def generate_launch_description():
     )
 
     return LaunchDescription([car_move_cmd,obs_move_cmd])
+    # return LaunchDescription([car_move_cmd])
