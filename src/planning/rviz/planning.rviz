@@ -4,9 +4,12 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /Global Options1
         - /ObsCar1
-        - /ObsCar1/Description Topic1
+        - /ReferenceLine1
+        - /ReferenceLine1/Offset1
         - /LocalPath1
+        - /LocalPath1/Offset1
       Splitter Ratio: 0.5
     Tree Height: 629
   - Class: rviz_common/Selection
@@ -261,7 +264,7 @@ Visualization Manager:
       Enabled: true
       Name: MarkerArray
       Namespaces:
-        pnc_map: true
+        {}
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -273,7 +276,7 @@ Visualization Manager:
       Enabled: true
       Name: Marker
       Namespaces:
-        global_path: true
+        {}
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -341,7 +344,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: map
+    Fixed Frame: base_footprint
     Frame Rate: 30
   Name: root
   Tools:
@@ -399,10 +402,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5503972172737122
+      Pitch: 0.36539721488952637
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.45539927482605
+      Yaw: 3.1603989601135254
     Saved:
       - Class: rviz_default_plugins/Orbit
         Distance: 5.996953964233398
@@ -440,5 +443,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1280
-  X: 266
-  Y: -20
+  X: 460
+  Y: -26

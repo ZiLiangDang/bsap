@@ -56,7 +56,7 @@ namespace Planning
                     if (right_width > car->width() + decision_config_->decision().safe_dis_l_ * 2.0) // 如果右边宽度够通过
                     {
                         p.l_ = (right_bound_l + obs_right_bound_l) / 2.0;
-                        p.type_ - static_cast<int>(SLPointType::RIGHT_PASS);
+                        p.type_ = static_cast<int>(SLPointType::RIGHT_PASS);
                         sl_points_.emplace_back(p);
                     }
                     else // 两边宽度都不够
@@ -89,8 +89,8 @@ namespace Planning
             SLPoint p_end;
             p_end.s_ = sl_points_.back().s_ + least_length;
             p_end.l_ = 0.0;
-            p.type_ = static_cast<int>(SLPointType::END);
-            sl_points_.emplace_back(p_end); // 尾插
+            p_end.type_ = static_cast<int>(SLPointType::END);
+            sl_points_.emplace_back(p_end);
         }
     }
     // 速度决策
@@ -121,7 +121,7 @@ namespace Planning
             double t_in;//切入时间
             double t_out; //切出时间
 
-            if(fabs(obs->l_2path()) <obs->width() /2.0)// 如果障碍物已经占据了路径
+            if(fabs(obs->l2path()) <obs->width() /2.0)// 如果障碍物已经占据了路径
             {
                 if(fabs(obs->dl_dt_2path())< min_speed)//并且侧向速度很低
                 {
@@ -136,7 +136,7 @@ namespace Planning
                     p.s0_ = obs_dis_s + obs->ds_dt_2path() * p.t0_ - ori_dis;
                     t_in = 0.0;
                     t_out = decision_config_->local_speeds().speed_size_; //切出时间定为计时最后
-                    RCLCPP_INFO(rclcpp::get_logger("decision_center"),"--------------obs_dis_s = %.2f,p.t0 = %.2f,t_in =%.2f,t_out = %.2f",
+                    RCLCPP_INFO(rclcpp::get_logger("decision_center"),"--------------obs_dis_s = %.2f,p.t0 = %.2f,p.s0_=%.2f,t_in =%.2f,t_out = %.2f",
                                 obs_dis_s,p.t0_,p.s0_,t_in,t_out);
                     //计算st点
                     p.t_ =p.t0_ + real_brake_time;
@@ -164,7 +164,7 @@ namespace Planning
                 }
 
                 const double car_dis_time = obs_dis_s / decision_config_->main_car().speed_ori_;//主车中心到达障碍物S位置的时间
-                const double obs_dis_time = (0.0 - obs->l_2path()) / obs->dl_dt_2path();//障碍物中心到达路径的时间
+                const double obs_dis_time = (0.0 - obs->l2path()) / obs->dl_dt_2path();//障碍物中心到达路径的时间
                 if(obs_dis_time < 0.0)//说明是远离路径的方向
                 {
                     continue;
@@ -177,7 +177,7 @@ namespace Planning
 
                 //计算切入和切出时间
                 const double delta_t = decision_config_->decision().safe_dis_s_ /decision_config_->main_car().speed_ori_;//安全时间阈值
-                const double half_through_time = (fabs(obs->length() / 2.0) / obs->dl_dt_2path());//半个车身穿过路径的时间
+                const double half_through_time = fabs(obs->length() / 2.0 / obs->dl_dt_2path());//半个车身穿过路径的时间
                 t_in = obs_dis_time - half_through_time;
                 t_out = obs_dis_time + half_through_time;
                 RCLCPP_INFO(rclcpp::get_logger("decision_center"),"------------------obs_dis_s = %.2f , p.t0 = %.2f,p.s0 = %.2f,car_dis_time = %.2f, obs_dis_time=%.2f,t_in=%.2f,t_out=%.2f,delta_t=%.2f",

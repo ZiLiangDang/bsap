@@ -1,0 +1,19 @@
+digraph G {
+"left_front_steering_knuckle" -> "left_front"[label=" Broadcaster: default_authority\nAverage rate: 11.412\nBuffer length: 0.701\nMost recent transform: 1781164141.347716\nOldest transform: 1781164140.646712\n"];
+"base_link" -> "left_front_steering_knuckle"[label=" Broadcaster: default_authority\nAverage rate: 11.412\nBuffer length: 0.701\nMost recent transform: 1781164141.347716\nOldest transform: 1781164140.646712\n"];
+"base_footprint" -> "base_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "left_rear"[label=" Broadcaster: default_authority\nAverage rate: 11.412\nBuffer length: 0.701\nMost recent transform: 1781164141.347716\nOldest transform: 1781164140.646712\n"];
+"right_front_steering_knuckle" -> "right_front"[label=" Broadcaster: default_authority\nAverage rate: 11.412\nBuffer length: 0.701\nMost recent transform: 1781164141.347716\nOldest transform: 1781164140.646712\n"];
+"base_link" -> "right_front_steering_knuckle"[label=" Broadcaster: default_authority\nAverage rate: 11.412\nBuffer length: 0.701\nMost recent transform: 1781164141.347716\nOldest transform: 1781164140.646712\n"];
+"base_link" -> "right_rear"[label=" Broadcaster: default_authority\nAverage rate: 11.412\nBuffer length: 0.701\nMost recent transform: 1781164141.347716\nOldest transform: 1781164140.646712\n"];
+"map" -> "base_footprint"[label=" Broadcaster: default_authority\nAverage rate: 11.436\nBuffer length: 0.7\nMost recent transform: 1781164141.315283\nOldest transform: 1781164140.615767\n"];
+"base_link" -> "camera"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "radar"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"map" -> "base_footprint_obs1"[label=" Broadcaster: default_authority\nAverage rate: 10.422\nBuffer length: 2.303\nMost recent transform: 1781164142.911906\nOldest transform: 1781164140.609121\n"];
+"map" -> "base_footprint_obs2"[label=" Broadcaster: default_authority\nAverage rate: 10.422\nBuffer length: 2.303\nMost recent transform: 1781164142.912104\nOldest transform: 1781164140.609293\n"];
+"map" -> "base_footprint_obs3"[label=" Broadcaster: default_authority\nAverage rate: 10.422\nBuffer length: 2.303\nMost recent transform: 1781164142.91212\nOldest transform: 1781164140.609335\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1781164145.6634948"[ shape=plaintext ] ;
+}->"map";
+}

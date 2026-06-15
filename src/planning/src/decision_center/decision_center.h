@@ -55,7 +55,7 @@ namespace Planning
                                 const std::vector<std::shared_ptr<VehicleBase>> &obses);//速度决策
         
         inline std::vector<SLPoint> sl_points()const { return sl_points_; } // 获取变道点位
-        inline std::vector<STPoint> st_points()const { return st_points_;}//获取变道点位
+        inline std::vector<STPoint> st_points()const { return st_points_;}//获取变速点位
     private:
         std::unique_ptr<ConfigReader> decision_config_;
         std::vector<SLPoint> sl_points_; // 变道点位

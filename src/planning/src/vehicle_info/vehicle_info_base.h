@@ -76,7 +76,7 @@ namespace Planning
 
         // 向路径投影的frenet参数
         inline double s_2path() const {return s_2path_;}
-        inline double l_2path() const {return l_2path_;}
+        inline double l2path() const {return l_2path_;}
         inline double ds_dt_2path() const {return ds_dt_2path_;}
         inline double dl_ds_2path() const {return dl_ds_2path_;}
         inline double dl_dt_2path() const {return dl_dt_2path_;}
